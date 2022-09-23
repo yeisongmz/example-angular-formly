@@ -186,7 +186,7 @@ export class AppComponent implements OnInit {
       Input15: 'Asuncion',
       Input16: 'NA',
     };
-    //this.model = modelInit;
+    this.model = modelInit;
   }
 
   submit() {
