@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 
@@ -6,7 +6,7 @@ import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
   selector: 'formly-app-example',
   templateUrl: './app.component.html',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   form = new FormGroup({});
   model: any = {};
   options: FormlyFormOptions = {};
@@ -17,7 +17,6 @@ export class AppComponent {
       props: {
         label: 'Fecha de Solicitud',
         placeholder: 'Fecha de Solicitud',
-        description: 'Fecha de carga',
         required: false,
       },
     },
@@ -27,7 +26,6 @@ export class AppComponent {
       props: {
         label: 'Registro Nro.',
         placeholder: 'Registro Nro.',
-        description: 'Registro Nro.',
         required: false,
       },
     },
@@ -37,7 +35,6 @@ export class AppComponent {
       props: {
         label: 'Nombres',
         placeholder: 'Nombres',
-        description: 'Nombres',
         required: false,
       },
     },
@@ -47,7 +44,6 @@ export class AppComponent {
       props: {
         label: 'Apellidos',
         placeholder: 'Apellidos',
-        description: 'Apellidos',
         required: false,
       },
     },
@@ -57,7 +53,6 @@ export class AppComponent {
       props: {
         label: 'CI Nro.',
         placeholder: 'CI Nro.',
-        description: 'CI Nro.',
         required: false,
       },
     },
@@ -67,17 +62,6 @@ export class AppComponent {
       props: {
         label: 'Grupo Sanguíneo',
         placeholder: 'Grupo Sanguíneo',
-        description: 'Grupo Sanguíneo',
-        required: false,
-      },
-    },
-    {
-      key: 'Input6',
-      type: 'input',
-      props: {
-        label: 'Apellidos',
-        placeholder: 'Apellidos',
-        description: 'Apellidos',
         required: false,
       },
     },
@@ -87,7 +71,6 @@ export class AppComponent {
       props: {
         label: 'Fecha de Nacimiento',
         placeholder: 'Fecha de Nacimiento',
-        description: 'Fecha de Nacimiento',
         required: false,
       },
     },
@@ -97,7 +80,6 @@ export class AppComponent {
       props: {
         label: 'Lugar de Nacimiento',
         placeholder: 'Lugar de Nacimiento',
-        description: 'Lugar de Nacimiento',
         required: false,
       },
     },
@@ -107,7 +89,6 @@ export class AppComponent {
       props: {
         label: 'Departamento',
         placeholder: 'Departamento',
-        description: 'Departamento',
         required: false,
       },
     },
@@ -117,7 +98,6 @@ export class AppComponent {
       props: {
         label: 'Ciudad',
         placeholder: 'Ciudad',
-        description: 'Ciudad',
         required: false,
       },
     },
@@ -127,7 +107,6 @@ export class AppComponent {
       props: {
         label: 'Barrio o Localidad',
         placeholder: 'Barrio o Localidad',
-        description: 'Barrio o Localidad',
         required: false,
       },
     },
@@ -137,7 +116,6 @@ export class AppComponent {
       props: {
         label: 'Dirección física',
         placeholder: 'Dirección física',
-        description: 'Dirección física',
         required: false,
       },
     },
@@ -147,7 +125,6 @@ export class AppComponent {
       props: {
         label: 'Teléfono',
         placeholder: 'Teléfono',
-        description: 'Teléfono',
         required: false,
       },
     },
@@ -157,7 +134,6 @@ export class AppComponent {
       props: {
         label: 'Institución o Empresa donde trabaja',
         placeholder: 'Institución o Empresa donde trabaja',
-        description: 'Institución o Empresa donde trabaja',
         required: false,
       },
     },
@@ -167,7 +143,6 @@ export class AppComponent {
       props: {
         label: 'Departamento laboral',
         placeholder: 'Departamento laboral',
-        description: 'Departamento laboral',
         required: false,
       },
     },
@@ -177,7 +152,6 @@ export class AppComponent {
       props: {
         label: 'Ciudad laboral',
         placeholder: 'Ciudad laboral',
-        description: 'Ciudad laboral',
         required: false,
       },
     },
@@ -187,15 +161,37 @@ export class AppComponent {
       props: {
         label: 'Barrio o Localidad laboral',
         placeholder: 'Barrio o Localidad laboral',
-        description: 'Barrio o Localidad laboral',
         required: false,
       },
     },
   ];
 
+  ngOnInit(): void {
+    let modelInit = {
+      Datepicker1: '2022-09-23T04:00:00.000Z',
+      Input1: '68468',
+      Input2: 'Yeison',
+      Input3: 'Gimenez',
+      Input4: '6253219',
+      Input5: 'NA',
+      Datepicker2: '1996-03-18T04:00:00.000Z',
+      Input7: 'Luque',
+      Input8: 'Central',
+      Input9: 'Luque',
+      Input10: 'Moracue',
+      Input11: 'Sub Oficial Ignacio Vera',
+      Input12: '0992682485',
+      Input13: 'CDS',
+      Input14: 'Developers',
+      Input15: 'Asuncion',
+      Input16: 'NA',
+    };
+    this.model = modelInit;
+  }
+
   submit() {
     if (true) {
-      alert(JSON.stringify(this.fields));
+      alert(JSON.stringify(this.model));
     }
   }
 }
