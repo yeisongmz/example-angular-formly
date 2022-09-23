@@ -69,7 +69,7 @@ export class AppComponent implements OnInit {
       key: 'Datepicker2',
       type: 'datepicker',
       props: {
-        label: 'Fecha de Nacimiento',
+        label: 'Fecha de Nacimiento.',
         placeholder: 'Fecha de Nacimiento',
         required: false,
       },
